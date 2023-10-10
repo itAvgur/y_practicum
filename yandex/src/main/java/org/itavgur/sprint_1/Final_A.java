@@ -71,35 +71,3 @@ public class Final_A {
     }
 
 }
-
-/*
-
-
-    int counter = -1;
-        for (int i = 0; i < map.length; i++) {
-        if (map[i] != 0 && counter == -1) {
-        result[i] = Integer.MAX_VALUE;
-        } else if (map[i] == 0 && counter == -1) {
-        result[i] = 0;
-        int reverseCounter = 1;
-        for (int k = i - 1; k >= 0; k--) {
-        result[k] = reverseCounter;
-        ++reverseCounter;
-        }
-        counter = 0;
-        } else if (map[i] == 0) {
-        result[i] = 0;
-        int reverseCounter = 1;
-        for (int k = i; k > i - (counter / 2); k--) {
-        result[k - 1] = reverseCounter;
-        ++reverseCounter;
-        }
-        counter = 0;
-        } else {
-        ++counter;
-        result[i] = counter;
-        }
-        }
-
-
-        */

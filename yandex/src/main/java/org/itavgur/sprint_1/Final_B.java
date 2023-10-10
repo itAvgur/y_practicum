@@ -14,6 +14,9 @@ import java.util.regex.Pattern;
  */
 public class Final_B {
 
+    private static final Integer KEYBOARD_ROWS_SIZE = 4;
+    private static final Integer KEYBOARD_COLUMNS_SIZE = 4;
+
     public static Integer process(int maxClick, String[][] map) {
 
         Map<Integer, Integer> keysMap = new HashMap<>();
@@ -34,7 +37,7 @@ public class Final_B {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
 
             int maxClick = readInt(reader);
-            String[][] map = readMatrix(reader, 4, 4);
+            String[][] map = readMatrix(reader, KEYBOARD_ROWS_SIZE, KEYBOARD_COLUMNS_SIZE);
             Integer result = process(maxClick, map);
             System.out.println(result);
         }

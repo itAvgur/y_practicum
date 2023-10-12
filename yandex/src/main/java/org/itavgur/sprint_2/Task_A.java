@@ -1,4 +1,4 @@
-package org.itavgur;
+package org.itavgur.sprint_2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,30 +6,34 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Arrays;
 
-public class Yandex {
+public class Task_A {
 
-    public static int process(Integer[] list) {
+    public static Integer[][] process(Integer rows, Integer columns, Integer[][] ar) {
 
-
-        return 3;
+        Integer[][] res = new Integer[columns][rows];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                res[j][i] = ar[i][j];
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) throws IOException {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            //read
 
-            //out
+            int rows = readInt(reader);
+            int columns = readInt(reader);
 
+            Integer[][] array = readMatrix(reader, rows, columns);
+
+            Integer[][] result = process(rows, columns, array);
+            printArraysPerLine(result);
         }
     }
 
-    private static void printArrayPerLine(String[] strings) {
-        PrintWriter output = new PrintWriter(System.out);
-        for (String string : strings) {
-            output.println(string);
-        }
-        output.flush();
-        output.close();
+    private static Integer readInt(BufferedReader reader) throws IOException {
+        return Integer.parseInt(reader.readLine());
     }
 
     private static void printArraysPerLine(Integer[][] array) {
@@ -47,23 +51,6 @@ public class Yandex {
         output.close();
     }
 
-    private static void printMatrix(Integer[][] values) {
-        PrintWriter output = new PrintWriter(System.out);
-        for (Integer[] row : values) {
-            for (Integer value : row) {
-                output.print(value);
-                output.print("");
-            }
-            output.println();
-        }
-        output.flush();
-        output.close();
-    }
-
-    private static Integer readInt(BufferedReader reader) throws IOException {
-        return Integer.parseInt(reader.readLine());
-    }
-
     private static Integer[] readIntegers(BufferedReader reader) throws IOException {
         return Arrays.stream(reader.readLine().split(" "))
                 .map(Integer::parseInt)
@@ -77,15 +64,6 @@ public class Yandex {
             res[i] = integers;
         }
         return res;
-    }
-
-    private static String readString(BufferedReader reader) throws IOException {
-        return reader.readLine();
-    }
-
-    private static String[] readStrings(BufferedReader reader) throws IOException {
-        return Arrays.stream(reader.readLine().split(" "))
-                .toArray(String[]::new);
     }
 
 }

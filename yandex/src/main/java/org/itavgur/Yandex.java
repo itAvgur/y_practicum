@@ -8,6 +8,8 @@ import java.util.Arrays;
 
 public class Yandex {
 
+    private static final String DELIMITER = " ";
+
     public static int process(Integer[] list) {
 
 
@@ -32,13 +34,23 @@ public class Yandex {
         output.close();
     }
 
-    private static void printArraysPerLine(Integer[][] array) {
+    private static void printArrayInLine(String[] strings) {
+        PrintWriter output = new PrintWriter(System.out);
+        for (String string : strings) {
+            output.print(string);
+            output.print(DELIMITER);
+        }
+        output.flush();
+        output.close();
+    }
+
+    private static void printMatrixPerLine(Integer[][] array) {
         PrintWriter output = new PrintWriter(System.out);
         for (Integer[] row : array) {
             for (int i = 0; i < row.length; i++) {
                 output.print(row[i]);
                 if (i + 1 != row.length) {
-                    output.print(" ");
+                    output.print(DELIMITER);
                 }
             }
             output.println();
@@ -52,7 +64,7 @@ public class Yandex {
         for (Integer[] row : values) {
             for (Integer value : row) {
                 output.print(value);
-                output.print("");
+                output.print(DELIMITER);
             }
             output.println();
         }
@@ -65,7 +77,7 @@ public class Yandex {
     }
 
     private static Integer[] readIntegers(BufferedReader reader) throws IOException {
-        return Arrays.stream(reader.readLine().split(" "))
+        return Arrays.stream(reader.readLine().split(DELIMITER))
                 .map(Integer::parseInt)
                 .toArray(Integer[]::new);
     }
@@ -84,7 +96,7 @@ public class Yandex {
     }
 
     private static String[] readStrings(BufferedReader reader) throws IOException {
-        return Arrays.stream(reader.readLine().split(" "))
+        return Arrays.stream(reader.readLine().split(DELIMITER))
                 .toArray(String[]::new);
     }
 

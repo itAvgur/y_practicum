@@ -18,9 +18,8 @@ public class Yandex {
 
     public static void main(String[] args) throws IOException {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            //read
 
-            //out
+            //nothing here
 
         }
     }
@@ -98,6 +97,15 @@ public class Yandex {
     private static String[] readStrings(BufferedReader reader) throws IOException {
         return Arrays.stream(reader.readLine().split(DELIMITER))
                 .toArray(String[]::new);
+    }
+
+    private static String[] readStrings(BufferedReader reader, int rows) throws IOException {
+        String[] res = new String[rows];
+        for (int i = 0; i < rows; ++i) {
+            String value = readString(reader);
+            res[i] = value;
+        }
+        return res;
     }
 
 }

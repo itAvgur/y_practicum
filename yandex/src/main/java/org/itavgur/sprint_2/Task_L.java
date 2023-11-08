@@ -7,22 +7,31 @@ import java.util.Arrays;
 
 public class Task_L {
 
-    public static int process(Integer[] number) {
-        return 0;
+    public static double process(Integer[] number) {
 
-
+        double value = nthFibonacciTerm(number[0] + 1);
+        return ("" + value).length() < number[1] ? value : format(value, number[1]);
     }
 
-    private static int fibonachi(int number) {
-        if (number == 0) return 0;
-        if (number == 1) return 1;
+    public static double nthFibonacciTerm(int n) {
 
-        return fibonachi(number - 1) + fibonachi(number - 2);
+        double pow = Math.pow(5, 0.5);
+        double a = (1 + (pow)) / 2;
+        double b = (1 - (pow)) / 2;
+
+        double v = Math.pow(a, n) - Math.pow(b, n);
+        return Math.floor(v / pow);
     }
+
+    private static double format(double value, int integer) {
+
+        return value % Math.pow(10, integer);
+    }
+
 
     public static void main(String[] args) throws IOException {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            Integer result = process(readIntegers(reader));
+            double result = process(readIntegers(reader));
             System.out.println(result);
         }
     }
@@ -32,4 +41,5 @@ public class Task_L {
                 .map(Integer::parseInt)
                 .toArray(Integer[]::new);
     }
+
 }

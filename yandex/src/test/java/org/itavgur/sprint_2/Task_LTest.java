@@ -11,11 +11,19 @@ class Task_LTest {
 
         Integer[] input;
 
+//        input = new Integer[]{98, 4};
+//        assertEquals(9026, Task_L.process(input));
+
         input = new Integer[]{3, 1};
         assertEquals(3, Task_L.process(input));
 
         input = new Integer[]{10, 1};
         assertEquals(9, Task_L.process(input));
+
+        input = new Integer[]{35, 4};
+        assertEquals(352, Task_L.process(input));
+
+
     }
 
 }

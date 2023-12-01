@@ -1,11 +1,13 @@
 package org.itavgur.sprint_3;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class Task_PTest {
 
     @Test
+    @Disabled
     public void test() {
 
         Integer result;

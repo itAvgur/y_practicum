@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.8.20"
     application
+    idea
 }
 
 group = "org.itavgur"
@@ -8,6 +9,13 @@ version = "1.0-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
+}
+
+idea {
+    module {
+        isDownloadJavadoc = true
+        isDownloadSources = true
+    }
 }
 
 repositories {

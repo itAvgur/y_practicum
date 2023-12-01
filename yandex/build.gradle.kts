@@ -2,11 +2,19 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("java")
+    idea
 //    kotlin("jvm") version "1.8.20"
 }
 
 group = "org.itavgur"
 version = "1.0-SNAPSHOT"
+
+idea {
+    module {
+        isDownloadJavadoc = true
+        isDownloadSources = true
+    }
+}
 
 repositories {
     mavenCentral()

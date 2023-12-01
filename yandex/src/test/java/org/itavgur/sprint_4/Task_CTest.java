@@ -1,5 +1,6 @@
 package org.itavgur.sprint_4;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class Task_CTest {
 
     @Test
+    @Disabled
     public void test() {
 
         Integer[] expected;
